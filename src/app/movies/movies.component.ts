@@ -18,7 +18,7 @@ export class MoviesComponent {
   };
   public displayGenres: any;
   public displayMovies:any;
-  displaymoviewithgenres:any;
+  public displaymoviewithgenres:any;
   public passSearchValue:any;
   public  SearchedArray:{
     movies:[{
@@ -36,8 +36,8 @@ export class MoviesComponent {
     this.MovieDataServices.getMoviesData().subscribe((data) => {
       this.MoviesArray = data
       this.displayMovies = this.MoviesArray.movies
-     console.log(this.MoviesArray.movies);
-     console.log(this.displayMovies);
+    //  console.log(this.MoviesArray.movies);
+    //  console.log(this.displayMovies);
 
      //separate genres from an array 
      let AllGenres:Array<string> =[];
@@ -70,15 +70,15 @@ export class MoviesComponent {
     //console.log(">>>>>>>>>>",AllGenres); 
     this.displayGenres = AllGenres;
     this.displaymoviewithgenres= moviesbyGenres;
-    console.log("222",this.displaymoviewithgenres); 
+    //console.log("222",this.displaymoviewithgenres); 
     }
     });
   }
+  //Search key input retriral and assigning new values
   onKey(event) {
     const inputValue = event.target.value;
     this.passSearchValue = inputValue;
-    console.log(inputValue);
-  
+    //console.log(inputValue);
   
     this.getSearchData().subscribe((data) => {
       this.SearchedArray = data;
@@ -92,9 +92,9 @@ export class MoviesComponent {
       FinalSearch.push(moviesSearched);
       this.displaymoviewithgenres = FinalSearch;
       }
-      console.log("1231244",this.displaymoviewithgenres);
     });
   }
+  //get the search data from api
   getSearchData(): Observable<any> {
     return this.http
       .get(`https://wookie.codesubmit.io/movies?q=${this.passSearchValue}`, {

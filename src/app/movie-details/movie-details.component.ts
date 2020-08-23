@@ -43,7 +43,7 @@ export class MovieDetailsComponent implements OnInit {
       }
     }
     this.displayDetails = MovieDetails;
-    console.log(this.displayDetails);
+    //console.log(this.displayDetails);
   });
   }
 }
