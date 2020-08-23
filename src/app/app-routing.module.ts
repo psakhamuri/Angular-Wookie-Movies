@@ -5,8 +5,8 @@ import { MovieDetailsComponent } from "./movie-details/movie-details.component";
 
 const routes: Routes = [ 
   
-  {path: 'Movies', component: MoviesComponent},
-  {path: 'MovieDetails', component: MovieDetailsComponent}
+  {path: '', component: MoviesComponent},
+  {path: 'MovieDetails/:title', component: MovieDetailsComponent}
 
 ];
 
@@ -14,6 +14,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
- }
+export class AppRoutingModule {}
+export const  routingComponents = [MoviesComponent,
+  MovieDetailsComponent]

@@ -1,5 +1,30 @@
-<template>
-  <div class="home">
-   <p>{{MoviesArray}}</p>
+ <div class="header">
+      <div class="row py-2 align-items-center">
+        <div class="col-sm-5">
+          <h1>Wookie Movies</h1>
+        </div>
+        <div class="col-sm-5" style="vertical-align: middle; display: table;">
+          <label for="type-text"></label>
+          <input type="text"  placeholder="Search..." class="ml-3" (keyup)="onKey($event)">
+        </div>
+      </div>
+    </div>
+<div class="container top">
+  <div class="row">
+      <div class ="movie-row col md" *ngFor="let movie of displaymoviewithgenres">
+        <h1 class="text-left pb-0 pt-1">Genre {{ movie.genre }}</h1>
+    <div class="card movie-column mb-2"
+   *ngIf="this.movie.genre == movie.movie.genre"
+    style="min-width: 220px; max-width: 320px; height: 100%; padding: .25em; margin: .5em auto auto auto;">
+      <img class="card-img-top" src="https://wookie.codesubmit.io/static/posters/{{movie.movie.id}}.jpg" alt="movie.movie.slug">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.movie.title}}</h5>
+        <p class="card-text">{{movie.movie.overview}}</p>
+        <a [routerLink]="['/MovieDetails',movie.movie.title]" routerLinkActive="active">
+          <div class="btn btn-outline-info rounded-pill" variant="outline-info">O</div>
+        </a>
+      </div>
+    </div>
+    </div> 
   </div>
-</template>
+</div>

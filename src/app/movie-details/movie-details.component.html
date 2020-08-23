@@ -1,3 +1,29 @@
-<p>
-  movie-details works!
-</p>
+  <div class="header container-fluid">
+    <div class="row py-2 align-items-center">
+      <div class="col-sm-5">
+        <h1>Wookie Movies</h1>
+      </div>
+    </div>
+  </div>
+  <div class ="" *ngFor="let movieDetails of displayDetails">
+  <div class="detail" 
+  [ngStyle]="{background: 'linear-gradient(rgba(0, 0, 0, 0.75) 0% , rgba(0, 0, 0, 0.6) 100%), url('+ movieDetails.backdrop +')'}"
+  [style.height.vh]= "100"
+  [style.background-size]="'cover'">
+    <div class="detail-row container-fluid">
+      <div data-v-a38ba3fe="" class="row mx-2 px-1 my-1 py-4 border border-light">
+        <div data-v-a38ba3fe="" class="col-sm-4 align-self-center"><img data-v-a38ba3fe=""
+            src="https://wookie.codesubmit.io/static/posters/{{movieDetails.id}}.jpg"
+            alt="Movie poster" class="p-2 img-fluid"></div>
+        <div data-v-a38ba3fe="" class="col-sm-8">
+          <p data-v-a38ba3fe="" class="text-left p-3 display-4">{{movieDetails.title}}</p>
+          <p data-v-a38ba3fe="" class="text-left pl-3 pt-2 m-0"><i data-v-a38ba3fe="">IMDB Rating:</i> {{movieDetails.imdb_rating}}</p>
+          <p  class="text-left pl-3 m-0"><i data-v-a38ba3fe="">Year:</i> {{movieDetails.released_on }}</p>
+          <p  class="text-left pl-3 pb-5 m-0"><i data-v-a38ba3fe="">Classification:</i> {{ movieDetails.classification}}</p>
+          <p  class="text-center">{{movieDetails.overview}}</p>
+        </div>
+      </div>
+    </div><a  routerLink="/" class="router-link-active"><button  type="button"
+        class="btn mt-5 btn-warning rounded-pill">Back</button></a>
+  </div>
+</div>
