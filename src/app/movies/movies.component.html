@@ -14,7 +14,6 @@
       <div class ="movie-row col md" *ngFor="let movie of displaymoviewithgenres">
         <h1 class="text-left pb-0 pt-1">Genre {{ movie.genre }}</h1>
     <div class="card movie-column mb-2"
-   *ngIf="this.movie.genre == movie.movie.genre"
     style="min-width: 220px; max-width: 320px; height: 100%; padding: .25em; margin: .5em auto auto auto;">
       <img class="card-img-top" src="https://wookie.codesubmit.io/static/posters/{{movie.movie.id}}.jpg" alt="movie.movie.slug">
       <div class="card-body">
